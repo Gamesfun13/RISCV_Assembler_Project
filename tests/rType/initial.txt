@@ -1,0 +1,17 @@
+add x1, x2, x3
+sub x4, x5, x6
+xor x7, x8, x9
+or x10, x11, x12
+and x13, x14, x15
+sll x16, x17, x18
+srl x19, x20, x21
+sra x22, x23, x24
+
+blt x7,x6,loop
+
+slt x25, x26, x27
+loop:
+addi x6,x7,1024
+sltu x28, x29, x30 
+
+

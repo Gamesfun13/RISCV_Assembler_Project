@@ -1,0 +1,17 @@
+addi x1, x2, 317
+xori x7, x8, -276
+ori x10, x11, 12
+andi x13, x14, 15
+slli x16, x17, 18
+srli x19, x20, 21
+srai x22, x23, 24
+slti x25, x26, 27
+sltiu x28, x29, 30
+lb x4, 4(x8)
+lh x14, 12(x7)
+lw x24, 56(x9)
+lbu x12, 12(x3)
+lhu x9, 78(x18)
+jalr x26, x25, 0
+ecall
+ebreak

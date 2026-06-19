@@ -1,0 +1,9 @@
+branch:
+beq x12, x6, end
+bne x8, x0, calls
+blt x19, x24, branch
+calls:
+bge x15, x0, calls
+bltu x31, x30, calls
+bgeu x29, x28, branch
+end:

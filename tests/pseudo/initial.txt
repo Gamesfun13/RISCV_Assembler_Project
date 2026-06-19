@@ -1,0 +1,20 @@
+nop
+mv ra, sp
+calls:
+not gp, tp
+call end
+neg t0, t1
+j calls
+jal end
+la x10, end
+ret
+beqz t2, calls
+bgez t3, end
+bltz t4, calls
+bgt t5, t6, end
+ble s0, s1, end
+end: 
+call calls
+li x2,0x12345
+li x1,123
+li x4,0x12000
