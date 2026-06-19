@@ -299,6 +299,9 @@ int calc_offset(int curr_pc, char *curr_label)
 
 int isOpcode(char *lptr)
 {
+    // printf("here :%s\n",lptr);
+ 
+
     if (
         (strcmp(lptr, "add") == 0) ||
         (strcmp(lptr, "sub") == 0) ||
@@ -357,7 +360,7 @@ int isOpcode(char *lptr)
         (strcmp(lptr, "ble") == 0))
     {
         // to be filled further
-        // printf("%s,",lptr);
+        
         return (1);
     }
     else
@@ -780,6 +783,7 @@ int iType(char *instruction, int curr_pc)
     char *rs1_bin = decToBin(rs1_num, 5);
     char *rd_bin = decToBin(rd_num, 5);
 
+    
     // Create the binary string
     if (instruction[0] == 'l')
     {
@@ -1103,15 +1107,17 @@ int readAndParse(FILE *pInfile, char *pLine, char **pLabel, char **pOpcode, char
     }
 
     *lPtr = '\0';
-    if (!(lPtr = strtok(pLine, "\t\n ,:")))
+    if (!(lPtr = strtok(pLine, "\t\n\r ,:"))){
         return (EMPTY_LINE);
-
+    }
+    
+    
     if (isOpcode(lPtr) == 0 /*&& lPtr[0] != '.'*/)
     {
-
+        
         *pLabel = lPtr;
         if (!(lPtr = strtok(NULL, "\t\n ,")))
-            return (OK);
+        return (OK);
     }
 
     *pOpcode = lPtr;
@@ -1189,7 +1195,7 @@ void write_instruction()
     }
 
     /** now put a newline at the end*/
-    fputc('\n', outfile);
+    fputs("\r\n", outfile);
 }
 
 int instructionType(char *lptr)
@@ -1710,7 +1716,7 @@ int main(int argc, char *argv[])
     fseek(lInfile2, 0, SEEK_SET);
     while ((lRet = readAndParse(lInfile2, lLine, &lLabel, &lOpcode, &lArg1, &lArg2, &lArg3, &lArg4)) != DONE)
     {
-        // printf("%s", lLine);
+        // printf("%s\n", lOpcode);
         if (lRet == EMPTY_LINE || /*strcmp(lLabel,"")!=0*/ lLabel[0] == '#')
         {
             continue; // Skip empty lines

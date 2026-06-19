@@ -145,10 +145,10 @@ test_Dump1:
 	@echo ""
 	@echo "Difference between test output and refernce output"
 	@echo "---------------------------------------------------"
-	@diff tests/Project_2/binary1.txt tests/Project_2/DUMP1_MACHINE.out
+	@diff tests/Project_2/binary1.txt tests/Project_2/DUMP1_MACHINE.ref
 	@echo "---------------------None !------------------------"
+
 test_Dump2:
-	
 	@echo "================Compiling Program...================="
 	gcc -g src/skeleton.c -o src/assembly
 	@echo "---------------------------------------------------"
@@ -160,7 +160,7 @@ test_Dump2:
 	@echo ""
 	@echo "Difference between test output and refernce output"
 	@echo "---------------------------------------------------"
-	@diff tests/Project_2/binary2.txt tests/Project_2/DUMP2_MACHINE.out
+	@diff tests/Project_2/binary2.txt tests/Project_2/DUMP2_MACHINE.ref
 	@echo "---------------------None !------------------------"
 test_Dump3:
 	
@@ -175,7 +175,7 @@ test_Dump3:
 	@echo ""
 	@echo "Difference between test output and refernce output"
 	@echo "---------------------------------------------------"
-	@diff tests/Project_2/binary3.txt tests/Project_2/DUMP3_MACHINE.out
+	@diff tests/Project_2/binary3.txt tests/Project_2/DUMP3_MACHINE.ref
 	@echo "---------------------None !------------------------"
 test_Dump4:
 	
@@ -190,6 +190,6 @@ test_Dump4:
 	@echo ""
 	@echo "Difference between test output and refernce output"
 	@echo "---------------------------------------------------"
-	@diff tests/Project_2/binary4.txt tests/Project_2/DUMP4_MACHINE.out
+	@diff tests/Project_2/binary4.txt tests/Project_2/DUMP4_MACHINE.ref
 	@echo "---------------------None !------------------------"
 	
